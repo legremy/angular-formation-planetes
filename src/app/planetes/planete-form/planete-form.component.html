@@ -1,0 +1,72 @@
+<h2>Ajouter/Modifier une planète</h2>
+<form [formGroup]="form">
+  <div class="form-group">
+    <input
+      formControlName="name"
+      type="text"
+      class="form-control"
+      placeholder="Nom"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      formControlName="rank"
+      type="text"
+      class="form-control"
+      placeholder="Rang"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      formControlName="type"
+      type="text"
+      class="form-control"
+      placeholder="Type"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      formControlName="image"
+      type="text"
+      class="form-control"
+      placeholder="Image"
+    />
+  </div>
+  <button class="btn btn-primary">Envoyer</button>
+</form>
+<hr />
+<div class="card-body bg-light">
+  {{ form.value | json }}
+</div>
+<div class="row">
+  <div class="card mb-3">
+    <h3 class="card-header">{{ planete.name }}</h3>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+    </div>
+    <img
+      style="height: 200px; width: 100%; display: block;"
+      src="{{ planete.image }}"
+      alt="Card image"
+    />
+    <div class="card-body">
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Dapibus ac facilisis in</li>
+      <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <div class="card-footer text-muted">
+      2 days ago
+    </div>
+  </div>
+</div>

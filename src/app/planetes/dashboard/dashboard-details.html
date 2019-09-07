@@ -1,0 +1,27 @@
+<div class="col-8">
+  <div class="card mb-2">
+    <h3 class="card-header">{{ planete?.name }}</h3>
+    <div class="card-body">
+      <h5 class="card-title">Classe : {{ planete?.type }}</h5>
+      <h6 class="card-subtitle text-muted">
+        {{ planete?.rank
+        }}<span *ngIf="planete?.rank == 1; else others">ère</span
+        ><ng-template #others>ème</ng-template> planète par rapport au soleil
+      </h6>
+    </div>
+    <img
+      class="img-thumbnail"
+      style="width: 445px; height:445px;display: block;"
+      src="{{ planete?.image }}"
+      alt="Card image"
+    />
+    <div class="card-body">
+      <p class="card-text">
+        {{ planete?.description }}
+      </p>
+    </div>
+    <div class="card-footer text-muted">
+      <a [routerLink]="['edit']" class="btn btn-primary">Modifier</a>
+    </div>
+  </div>
+</div>
